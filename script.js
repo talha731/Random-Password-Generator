@@ -87,21 +87,87 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
-
+let characters= [specialCharacters,upperCasedCharacters,lowerCasedCharacters,numericCharacters];
 // Function to prompt user for password options
-function getPasswordOptions() {
+function generate() {
+ 
+    let upperCase = "Would you like uppercase characters?";
+    if (confirm(upperCase) == true) {
+      upperCase = "Password will contain uppercase characters";
+    } else {
+      upperCase = "Password will NOT contain uppercase characters";
+    }
+  
 
+   
+      let  lowerCase= "Would you like lowercase characters?";
+      if (confirm(lowerCase) == true) {
+        lowerCase = "Password will contain lowercase characters";
+      } else {
+        lowerCase = "Password will NOT contain lowercase characters";
+      }
+      
+    
+   
+      let  specials= "Would you like special characters?.";
+      if (confirm(specials) == true) {
+        specials = "Password will contain special characters";
+      } else {
+        specials = "Password will NOT contain special characters";
+      }
+     
+    
+   
+      let numbers = "Would you like numbers characters?.";
+      if (confirm(numbers) == true) {
+        numbers = "Password will contain numbers";
+      } else {
+        numbers = "Password will NOT contain numbers";
+      }
+      
 }
+console.log(generate());
+
+
+
+
+
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+  
+  
+  
+
 
 }
+
+
+
+
+
+
+
+
 
 // Function to generate password with user input
-function generatePassword() {
+function generatePassword() 
+  {
+    let password = "";
+    for (let i = 0; i < length; i++) {
+      password += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+    return password;
+  };
 
-}
+
+console.log(generatePassword());
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
@@ -115,4 +181,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writePassword)
